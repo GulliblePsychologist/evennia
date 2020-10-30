@@ -405,6 +405,7 @@ if WEBSERVER_ENABLED:
                     factory.noisy = False
                     factory.protocol = webclient.WebSocketClient
                     factory.sessionhandler = PORTAL_SESSIONS
+                    factory.setProtocolOptions(trustXForwardedFor=1)
                     websocket_service = internet.TCPServer(port, factory, interface=w_interface)
                     websocket_service.setName("EvenniaWebSocket%s:%s" % (w_ifacestr, port))
                     PORTAL.services.addService(websocket_service)
