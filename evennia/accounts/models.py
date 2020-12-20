@@ -179,3 +179,7 @@ class AccountDB(TypedObject, AbstractUser):
         raise Exception("User id cannot be deleted!")
 
     uid = property(__uid_get, __uid_set, __uid_del)
+
+    class Meta(object):
+        "Define Django meta options"
+        verbose_name = "Account"
